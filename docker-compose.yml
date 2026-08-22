@@ -1,0 +1,9 @@
+services:
+  bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: salefinder
+    restart: unless-stopped
+    volumes:
+      - ./data:/home/project/data

@@ -40,6 +40,6 @@ export const updateActiveUser = db.prepare(`
 
 export const updateLastActiveUser = db.prepare(`
     UPDATE users
-    SET last_activity = ${new Date().toISOString()}
-    WHERE id = ?
+    SET last_activity = @last_activity
+    WHERE id = @id
 `);

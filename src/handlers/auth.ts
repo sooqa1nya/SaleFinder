@@ -9,9 +9,9 @@ export const auth = new Composer({ name: 'auth' })
 
         const user = getUser.get(context.from.id);
 
-        if (!user) {
-            const date = new Date().toISOString();
+        const date = new Date().toISOString();
 
+        if (!user) {
             insertUser.run({
                 id: context.from.id,
                 username: context.from.username || null,
@@ -21,7 +21,10 @@ export const auth = new Composer({ name: 'auth' })
                 payload: ''
             });
         } else {
-            updateLastActiveUser.run(context.from.id);
+            updateLastActiveUser.run({
+                id: context.from.id,
+                last_activity: date
+            });
         }
 
         await context.send('Success');

@@ -44,9 +44,9 @@ export const observer = async () => {
         for (const user of users) {
             const text = `
 🎮 <b>${game.title}</b>
-  │
-  ├ Released: <code>${game.released}</code>
-  └ Price: <code>${game.originalPrice}</code>
+ │
+ ├ Released: <code>${game.released}</code>
+ └ Price: <code>${game.originalPrice}</code>
 
 <blockquote>${game.reviewTooltip}</blockquote>
             `;

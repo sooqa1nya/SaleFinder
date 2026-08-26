@@ -40,6 +40,8 @@ export const updateActiveUser = db.prepare(`
 
 export const updateLastActiveUser = db.prepare(`
     UPDATE users
-    SET last_activity = @last_activity
+    SET
+        last_activity = @last_activity
+        AND is_active = 1
     WHERE id = @id
 `);

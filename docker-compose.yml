@@ -1,8 +1,11 @@
 services:
   bot:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: sooqa1nya/salefinder:latest
+    env_file:
+      - .env
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
     container_name: salefinder
     restart: unless-stopped
     volumes:
